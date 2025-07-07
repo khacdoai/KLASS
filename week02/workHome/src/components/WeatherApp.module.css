@@ -1,0 +1,196 @@
+/* ---------- Biến toàn cục ---------- */
+:root {
+  --device-width: 440px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --gap: 20px;
+  --font-main: 'SF Pro Rounded', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  --temp-size: clamp(56px, 14vw, 88px);
+  --icon-size: clamp(56px, 14vw, 88px);
+}
+
+/* ---------- Khung tổng ---------- */
+.container {
+  width: 100%;
+  max-width: var(--device-width);
+  height: 950px;
+  margin: 0 auto;
+  padding: var(--gap) calc(var(--gap) * 0.8);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  background: linear-gradient(#9fc9ed 0%, #d8ecf8 100%);
+  font-family: var(--font-main);
+}
+
+/* ---------- Thanh tìm kiếm ---------- */
+.searchBar {
+  width: 100%;
+  height: 44px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.55);
+  color: #333;
+}
+
+.searchBar::placeholder {
+  color: #666;
+}
+
+/* ---------- Nhiệt độ chính ---------- */
+.mainWeather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+}
+
+.temperature {
+  font-size: var(--temp-size);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.sunIcon {
+  font-size: var(--icon-size);
+  color: #fff;
+}
+
+.description {
+  font-size: 26px;
+  font-weight: 500;
+  color: #fff;
+  margin-top: 4px;
+}
+
+/* ---------- Hộp Humidity / Wind ---------- */
+.infoBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(6px);
+  padding: 12px 0;
+  margin-bottom: 6px;
+}
+
+.infoBox > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.infoBox > div:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.infoTitle {
+  font-size: 14px;
+  color: #444;
+}
+
+.infoValue {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* ---------- Dự báo theo giờ (hiển thị 4 item đầu, cuộn ngang) ---------- */
+.hourlyScrollWrapper {
+  width: 95%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: 10px 12px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE */
+}
+
+.hourlyScrollWrapper::-webkit-scrollbar {
+  display: none;               /* Chrome */
+}
+
+.hourlyContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: max-content;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hourItem {
+ flex: 0 0 30%;                  /* ✅ mỗi item chiếm đúng 1/4 */
+  text-align: center;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+   align-items: center;
+  gap: 4px;
+  }
+
+.hourIcon {
+  width: 50px;
+  height: 50px;
+}
+
+.temp {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.time {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 600px) {
+  :root {
+    --device-width: 480px;
+    --gap: 24px;
+  }
+}
+
+/* ---------- Phần phụ khác ---------- */
+.searchWrapper {
+  width: 450px;
+}
+
+.sunImg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.statusBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  margin-top: env(safe-area-inset-top, 8px);
+  margin-bottom: 8px;
+  padding: 6px 6px;
+}
+
+.clock {
+  font-weight: 500;
+}
+
+.statusIcons {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+  margin-left: 10px;
+}
