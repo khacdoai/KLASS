@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Xóa phần tử trong danh sách</title>
+  <style>
+    ul {
+      margin-top: 10px;
+    }
+    li {
+      padding: 5px;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .deleteBtn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <ul id="itemList">
+    <li>Item 1 <button class="deleteBtn">Xóa</button></li>
+    <li>Item 2 <button class="deleteBtn">Xóa</button></li>
+    <li>Item 3 <button class="deleteBtn">Xóa</button></li>
+  </ul>
+
+  <script>
+    document.querySelectorAll(".deleteBtn").forEach(function(button) {
+      button.addEventListener("click", function() {
+        const li = this.parentElement;
+        li.remove(); 
+      });
+    });
+  </script>
+
+</body>
+</html>

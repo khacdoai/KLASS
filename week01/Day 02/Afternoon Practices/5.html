@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Avatar</title>
+</head>
+<body>
+  <div style="width: 100px; height: 100px;">
+    <img id="avatar" src="" style="width: 100%; height: 100%;">
+  </div>   
+
+  <button id="changeImageBtn">Update</button>
+
+  <script>
+    let nameImg = "https://i.pinimg.com/originals/48/ce/91/48ce9180a30c3d797b3fc6de2eec60ed.jpg";
+    const imgEl = document.getElementById("avatar");
+
+    imgEl.src = nameImg;
+
+    document.getElementById("changeImageBtn").addEventListener("click", function() {
+      nameImg = "https://bom.edu.vn/public/upload/2024/12/avatar-hoat-hinh-cute-2.webp";
+      imgEl.src = nameImg;
+    });
+  </script>
+</body>
+</html>

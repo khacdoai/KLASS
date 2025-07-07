@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tự động kiểm tra input</title>
+  <style>
+    input {
+      padding: 8px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .error-border {
+      border-color: red !important;
+    }
+
+    #nameError {
+      color: red;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="nameInput">Họ và tên:</label><br>
+  <input type="text" id="nameInput" placeholder="Nhập tên của bạn"><br>
+  <p id="nameError"></p>
+
+  <script>
+    const nameInput = document.getElementById('nameInput');
+    const nameError = document.getElementById('nameError');
+
+    nameInput.addEventListener('input', function () {
+      if (nameInput.value.trim() === '') {
+        nameInput.classList.add('error-border');
+        nameError.textContent = 'Vui lòng nhập họ tên!';
+      } else {
+        nameInput.classList.remove('error-border');
+        nameError.textContent = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

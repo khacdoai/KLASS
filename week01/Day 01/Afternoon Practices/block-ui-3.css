@@ -1,0 +1,85 @@
+:root {
+  --font-family: 'Roboto', sans-serif;
+  --title-color: #555;
+  --number-color: #00c6ff;
+  --label-color: #888;
+  --card-bg: #ffffff;
+  --bg: #ecf0f1;
+  --bar-border: #dddddd;
+
+  --color-red: #f44336;
+  --color-green: #4caf50;
+  --color-yellow: #fbc02d;
+  --color-blue: #00bcd4;
+  --color-orange: #ff9800;
+}
+
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: var(--font-family);
+  background: var(--bg);
+}
+
+.stats-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  width: 230px;
+  background: var(--card-bg);
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-header h4 {
+  margin: 0;
+  font-size: 13px;
+  color: var(--title-color);
+  text-transform: uppercase;
+}
+
+.stat-number {
+  margin: 10px 0 16px;
+  font-size: 28px;
+  color: var(--number-color);
+}
+
+.chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.bar-wrapper {
+  width: 18px;
+  height: 100%;
+  border: 2px solid var(--bar-border);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.bar-fill {
+  width: 100%;
+  transition: height 0.3s ease;
+}
+
+.red { background-color: var(--color-red); }
+.green { background-color: var(--color-green); }
+.yellow { background-color: var(--color-yellow); }
+.blue { background-color: var(--color-blue); }
+.orange { background-color: var(--color-orange); }
+
+.days {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--label-color);
+}

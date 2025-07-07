@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thêm mục danh sách</title>
+  <style>
+    ul {
+      margin-top: 10px;
+    }
+    li {
+      padding: 5px;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="itemInput" placeholder="Nhập mục mới">
+  <button id="addItemBtn">Thêm</button>
+
+  <ul id="itemList"></ul>
+
+  <script>
+    document.getElementById("addItemBtn").addEventListener("click", function () {
+      const input = document.getElementById("itemInput");
+      const text = input.value.trim();
+
+      if (text !== "") {
+        const li = document.createElement("li");
+        li.textContent = text;
+
+        document.getElementById("itemList").appendChild(li);
+        input.value = "";
+      } else {
+        alert("Vui lòng nhập nội dung!");
+      }
+    });
+  </script>
+
+</body>
+</html>

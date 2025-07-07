@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="light">
+  <header>
+    <h1>Dashboard</h1>
+    <span id="clock"></span>
+    <span id="greeting"></span>
+    <button id="themeBtn" title="Toggle theme">🌙</button>
+  </header>
+
+  <section class="card">
+    <h2>To‑Do List</h2>
+
+    <div class="input‑group">
+      <input type="text" id="todoInput" placeholder="Enter a task" />
+      <button id="addTodoBtn">Add Task</button>
+    </div>
+    <small id="todoError" class="error"></small>
+
+    <div class="filters">
+      <span>Filters:</span>
+      <button data-filter="all"   class="filter active">All</button>
+      <button data-filter="done"  class="filter">Completed</button>
+      <button data-filter="todo"  class="filter">Incomplete</button>
+    </div>
+
+    <ul id="todoList"></ul>
+  </section>
+
+  <section class="card">
+    <h2>Sticky Notes</h2>
+
+    <div class="input‑group">
+      <input type="text" id="noteInput" placeholder="Write a note…" />
+      <button id="addNoteBtn">Add Note</button>
+    </div>
+    <small id="noteError" class="error"></small>
+
+    <div id="notesContainer" class="notes"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

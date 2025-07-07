@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .Item {
+        background-color: bisque;
+        width: 200px;
+        height: 200px;
+    }
+    .color {
+        background-color: black;
+        width: 200px;
+        height: 200px;
+    }
+  </style>
+</head>
+<body>
+    <div class="Item"> 
+    
+    </div>
+  <script>
+    document.querySelectorAll(".Item").forEach(function(btn){
+        btn.addEventListener('mouseover', function(){
+             var element = document.getElementsByClassName("Item")[0];
+      element.classList.toggle("color");
+        })
+        btn.addEventListener('mouseout', function(){
+             var element = document.getElementsByClassName("Item")[0];
+      element.classList.toggle("color");
+        })
+    })
+  
+
+  </script>
+
+</body>
+</html>

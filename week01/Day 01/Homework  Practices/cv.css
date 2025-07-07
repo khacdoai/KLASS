@@ -1,0 +1,161 @@
+    :root {
+      /* Thong tin ca nhan */
+      --name: "Vo Khac Doai";
+      --dob: "10/05/1989";
+      --phone: "0193 483 4827";
+      --email: "alanwalker@gmail.com";
+      --website: "www.yourdomain.com";
+      --hobbies: "Dance, Read Book, Swimming";
+
+      /* Ky nang chuyen mon */
+      --skill-photoshop: 90;
+      --skill-illustrator: 80;
+      --skill-html: 85;
+      --skill-css: 80;
+
+      /* Ky nang ca nhan */
+      --skill-teamwork: 90;
+      --skill-timekeeping: 80;
+      --skill-organisation: 85;
+      --skill-communication: 88;
+
+      /* Mau sac */
+      --color-dark: #000;
+      --color-light: #fff;
+      --color-gray: #ccc;
+      --color-text: #444;
+
+      --font-main: 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-main);
+      background: var(--color-light);
+      color: var(--color-text);
+    }
+
+    .resume {
+      display: flex;
+      max-width: 1000px;
+      margin: auto;
+      border: 1px solid var(--color-gray);
+    }
+
+    .sidebar {
+      background: var(--color-dark);
+      color: var(--color-light);
+      width: 35%;
+      padding: 20px;
+    }
+
+    .sidebar .photo {
+      width: 100%;
+      height: 200px;
+      background: url('https://cafebiz.cafebizcdn.vn/thumb_w/640/162123310254002176/2023/10/25/395209126-7098402140171579-3912294698631496411-n-5168-1698218521013-16982185211191625182965.jpg') center center/cover no-repeat;
+      border: 3px solid var(--color-light);
+    }
+
+    .sidebar h2 {
+      margin-top: 30px;
+      font-size: 16px;
+      border-bottom: 1px solid var(--color-gray);
+    }
+
+    .sidebar p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .sidebar .hobbies ul {
+      list-style: none;
+      padding: 0;
+      font-size: 14px;
+    }
+
+    .sidebar .hobbies ul li::before {
+      content: "\2605 ";
+      color: var(--color-light);
+      margin-right: 5px;
+    }
+
+    .content {
+      width: 65%;
+      padding: 30px;
+    }
+
+    .content header h1 {
+      font-size: 36px;
+      letter-spacing: 5px;
+      color: #999;
+      margin: 0;
+    }
+
+    .content header p {
+      font-size: 16px;
+      color: gray;
+      margin: 5px 0 20px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      font-size: 16px;
+      color: #aaa;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .entry {
+      margin-bottom: 15px;
+    }
+
+    .entry strong {
+      display: inline-block;
+      width: 100px;
+    }
+
+    .entry .company,
+    .entry .university {
+      font-weight: bold;
+      color: #666;
+    }
+
+    .entry .position,
+    .entry .course {
+      font-style: italic;
+      color: gray;
+    }
+
+    .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills li {
+      margin-bottom: 10px;
+    }
+
+    .skill-bar {
+      height: 5px;
+      background: var(--color-gray);
+      margin-top: 5px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .skill-bar div {
+      height: 5px;
+      background: var(--color-dark);
+    }
+
+    .bar-photoshop      { width: calc(var(--skill-photoshop) * 1%); }
+    .bar-illustrator    { width: calc(var(--skill-illustrator) * 1%); }
+    .bar-html           { width: calc(var(--skill-html) * 1%); }
+    .bar-css            { width: calc(var(--skill-css) * 1%); }
+    .bar-teamwork       { width: calc(var(--skill-teamwork) * 1%); }
+    .bar-timekeeping    { width: calc(var(--skill-timekeeping) * 1%); }
+    .bar-organisation   { width: calc(var(--skill-organisation) * 1%); }
+    .bar-communication  { width: calc(var(--skill-communication) * 1%); }

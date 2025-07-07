@@ -1,0 +1,134 @@
+/* ---------- Color palette & helpers ---------- */
+:root {
+  --primary: #0066ff;
+  --primary-dark: #004bcc;
+  --danger: #e63946;
+  --bg: #f7f9fc;
+  --text: #222;
+  --radius: 8px;
+  --gap: 1rem;
+  --transition: 0.25s ease;
+}
+
+/* ---------- Wrapper ---------- */
+.container {
+  max-width: 520px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ---------- Title ---------- */
+.container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  font-size: 1.9rem;
+}
+
+/* ---------- Form structure ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Labels ---------- */
+label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+/* ---------- Inputs / selects / textareas ---------- */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d0d5dd;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  transition: border var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* ---------- Radio & inline groups ---------- */
+div > .inline,
+div > div > .inline {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.35rem;
+}
+
+.inline label {
+  font-weight: normal;
+}
+
+/* ---------- Error text ---------- */
+p {
+  margin-top: 0.25rem;
+  font-size: 0.83rem;
+  color: var(--danger);
+}
+
+/* ---------- Submit button ---------- */
+button[type="submit"] {
+  padding: 0.8rem;
+  margin-top: 0.3rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+button[type="submit"]:hover {
+  background: var(--primary-dark);
+}
+
+/* ---------- Preview (sau khi submit) ---------- */
+ul {
+  margin-top: 1.8rem;
+  list-style: none;
+  padding: 1rem;
+  background: var(--bg);
+  border-radius: var(--radius);
+}
+
+ul li {
+  font-size: 0.9rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #e9edf2;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  .container {
+    margin: 1rem;
+    padding: 1.4rem;
+  }
+}

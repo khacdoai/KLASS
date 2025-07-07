@@ -1,0 +1,70 @@
+:root {
+  --font-family: 'Roboto', sans-serif;
+  --text-color: #ffffff;
+  --card-padding: 30px;
+  --card-border-radius: 4px;
+  --facebook-color: #619BEC;
+  --twitter-color: #31C8DD;
+  --google-color:#F78153;
+  --pinterest-color: #F75354;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.social-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1000px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 200px;
+  padding: var(--card-padding);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 300px;
+}
+
+.card i {
+  font-size: 36px;
+  margin-bottom: 150px;
+}
+
+.card h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.facebook {
+  background-color: var(--facebook-color);
+}
+
+.twitter {
+  background-color: var(--twitter-color);
+}
+
+.google {
+  background-color: var(--google-color);
+}
+
+.pinterest {
+  background-color: var(--pinterest-color);
+}

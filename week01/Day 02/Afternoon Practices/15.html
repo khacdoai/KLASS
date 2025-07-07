@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bộ đếm ký tự</title>
+  <style>
+    textarea {
+      width: 300px;
+      height: 100px;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    #charCount {
+      font-size: 14px;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    .warning {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="bioInput">tối đa 200 ký tự:</label><br>
+  <textarea id="bioInput" maxlength="200"></textarea>
+  <p id="charCount">Còn lại: 200 ký tự</p>
+
+  <script>
+    const textarea = document.getElementById('bioInput');
+    const charCount = document.getElementById('charCount');
+    const maxLength = 200;
+
+    textarea.addEventListener('input', function () {
+      const remaining = maxLength - textarea.value.length;
+      charCount.textContent = `Còn lại: ${remaining} ký tự`;
+    });
+  </script>
+
+</body>
+</html>

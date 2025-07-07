@@ -1,0 +1,75 @@
+:root {
+  --circle-size: 120px;
+  --font-family: 'Roboto', sans-serif;
+  --font-size: 16px;
+  --icon-size: 36px;
+
+  --idea-color: #F75354;
+  --prototype-color: #31C8DD;
+  --coding-color: #51D567;
+  --testing-color: #CB79E7;
+
+  --arrow-color: #ccc;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.process-flow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.step {
+  text-align: center;
+}
+
+.circle {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 10px;
+  font-size: var(--icon-size);
+}
+
+.idea .circle {
+  background-color: var(--idea-color);
+}
+
+.prototype .circle {
+  background-color: var(--prototype-color);
+}
+
+.coding .circle {
+  background-color: var(--coding-color);
+}
+
+.testing .circle {
+  background-color: var(--testing-color);
+}
+
+.step p {
+  margin: 0;
+  font-size: var(--font-size);
+  font-weight: 500;
+  color: #333;
+}
+
+.arrow {
+  font-size: 25px;
+  color: var(--arrow-color);
+  user-select: none;
+  margin: 10px;
+}

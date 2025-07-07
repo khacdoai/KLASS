@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User Registration</title>
+<style>
+  body{
+    font-family: Arial, sans-serif;
+    background:#f4f6fa;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:40px;
+  }
+  form{
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    width:430px;
+    padding:30px 40px;
+  }
+  h2{margin-top:0;text-align:center;color:#333}
+
+  .form‑group{margin-bottom:18px;position:relative}
+  label{display:block;margin-bottom:6px;color:#444;font-weight:600}
+  input,select,textarea{
+    width:100%;padding:10px;border:2px solid #cfd3db;border-radius:6px;
+    font-size:15px;box-sizing:border-box;transition:border-color .2s
+  }
+  input[type="radio"],input[type="checkbox"]{width:auto;margin-right:6px}
+  textarea{height:80px;resize:vertical}
+  .error-msg{
+    color:#e53935;font-size:13px;margin-top:4px;display:none
+  }
+
+  .invalid{border-color:#e53935 !important}
+  .invalid-msg{display:block}
+
+  button{
+    width:100%;padding:12px;font-size:16px;border:none;
+    background:#2196f3;color:#fff;border-radius:6px;cursor:pointer
+  }
+  button:disabled{background:#90caf9;cursor:not-allowed}
+</style>
+</head>
+
+<body>
+<form id="regForm" novalidate>
+  <h2>Sign Up</h2>
+
+  <div class="form‑group">
+    <label for="fullName">Full Name *</label>
+    <input id="fullName" name="fullName" type="text" required>
+    <div class="error-msg" id="fullNameErr"></div>
+  </div>
+
+  <div class="form‑group">
+    <label for="email">Email *</label>
+    <input id="email" name="email" type="email" required>
+    <div class="error-msg" id="emailErr"></div>
+  </div>
+
+  <div class="form‑group">
+    <label for="password">Password *</label>
+    <input id="password" name="password" type="password" required>
+    <div class="error-msg" id="passwordErr"></div>
+  </div>
+
+  <div class="form‑group">
+    <label for="confirmPassword">Confirm Password *</label>
+    <input id="confirmPassword" type="password" required>
+    <div class="error-msg" id="confirmPasswordErr"></div>
+  </div>
+
+  <div class="form‑group">
+    <label for="phone">Phone Number *</label>
+    <input id="phone" name="phone" type="tel" required>
+    <div class="error-msg" id="phoneErr"></div>
+  </div>
+
+  <div class="form‑group">
+    <label>Gender *</label>
+    <label><input type="radio" name="gender" value="male">Male</label>
+    <label><input type="radio" name="gender" value="female">Female</label>
+    <label><input type="radio" name="gender" value="other">Other</label>
+    <div class="error-msg" id="genderErr"></div>
+  </div>
+
+  <div class="form‑group">
+    <label for="dob">Date of Birth *</label>
+    <input id="dob" name="dob" type="date" required>
+    <div class="error-msg" id="dobErr"></div>
+  </div>
+
+  <div class="form‑group">
+    <label for="country">Country *</label>
+    <select id="country" name="country" required>
+      <option value="">-- Select Country --</option>
+      <option value="us">United States</option>
+      <option value="uk">United Kingdom</option>
+      <option value="vn">Viet Nam</option>
+      <option value="jp">Japan</option>
+    </select>
+    <div class="error-msg" id="countryErr"></div>
+  </div>
+
+  <div class="form‑group">
+    <label>Hobbies *</label>
+    <label><input type="checkbox" name="hobbies" value="reading">Reading</label>
+    <label><input type="checkbox" name="hobbies" value="sports">Sports</label>
+    <label><input type="checkbox" name="hobbies" value="music">Music</label>
+    <div class="error-msg" id="hobbiesErr"></div>
+  </div>
+
+  <div class="form‑group">
+    <label for="avatar">Profile Picture (jpg/jpeg/png)</label>
+    <input id="avatar" name="avatar" type="file" accept=".jpg,.jpeg,.png">
+    <div class="error-msg" id="avatarErr"></div>
+  </div>
+
+  <div class="form‑group">
+    <label for="bio">Bio / About You (max 300 chars)</label>
+    <textarea id="bio" name="bio" maxlength="300"></textarea>
+  </div>
+
+  <button type="submit" id="submitBtn">Register</button>
+</form>
+
+<script>
+
+const $ = id => document.getElementById(id);
+const showErr = (input, msg) => {
+  input.classList.add('invalid');
+  const errDiv = $(input.id + 'Err');
+  if (errDiv) { errDiv.textContent = msg; errDiv.classList.add('invalid-msg'); }
+};
+const clearErr = input => {
+  input.classList.remove('invalid');
+  const errDiv = $(input.id + 'Err');
+  if (errDiv) { errDiv.textContent = ''; errDiv.classList.remove('invalid-msg'); }
+};
+
+function validateForm(e){
+  let valid = true;
+
+  const fullName = $('fullName');
+  if(fullName.value.trim().length < 3){
+    showErr(fullName,'Full Name must be at least 3 characters');
+    valid = false;
+  }else clearErr(fullName);
+
+  const email = $('email');
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  if(!emailRegex.test(email.value.trim())){
+    showErr(email,'Enter a valid email');
+    valid = false;
+  }else clearErr(email);
+
+  const password = $('password');
+  const pwdRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  if(!pwdRegex.test(password.value)){
+    showErr(password,'Min 8 chars, include letters & numbers');
+    valid = false;
+  }else clearErr(password);
+
+  const confirmPassword = $('confirmPassword');
+  if(confirmPassword.value !== password.value || confirmPassword.value===''){
+    showErr(confirmPassword,'Passwords do not match');
+    valid = false;
+  }else clearErr(confirmPassword);
+
+  const phone = $('phone');
+  const phoneRegex = /^\d{10,}$/;
+  if(!phoneRegex.test(phone.value.trim())){
+    showErr(phone,'Phone: digits only, min 10');
+    valid = false;
+  }else clearErr(phone);
+
+  const genderInputs = document.querySelectorAll('input[name="gender"]');
+  const genderSelected = [...genderInputs].some(r=>r.checked);
+  const genderErr = $('genderErr');
+  if(!genderSelected){
+    genderErr.textContent='Please select gender';
+    genderErr.classList.add('invalid-msg');
+    valid = false;
+  }else{
+    genderErr.textContent='';
+    genderErr.classList.remove('invalid-msg');
+  }
+
+  const dob = $('dob');
+  const birthDate = new Date(dob.value);
+  const age = (Date.now() - birthDate) / (1000*60*60*24*365.25);
+  if(!dob.value || age < 18){
+    showErr(dob,'Must be at least 18 years old');
+    valid = false;
+  }else clearErr(dob);
+
+  
+  const country = $('country');
+  if(!country.value){
+    showErr(country,'Select your country');
+    valid = false;
+  }else clearErr(country);
+
+  const hobbyBoxes = document.querySelectorAll('input[name="hobbies"]');
+  const hobbyChecked = [...hobbyBoxes].some(cb=>cb.checked);
+  const hobbiesErr = $('hobbiesErr');
+  if(!hobbyChecked){
+    hobbiesErr.textContent='Select at least one hobby';
+    hobbiesErr.classList.add('invalid-msg');
+    valid = false;
+  }else{
+    hobbiesErr.textContent='';
+    hobbiesErr.classList.remove('invalid-msg');
+  }
+
+  const avatar = $('avatar');
+  if(avatar.files.length){
+    const file = avatar.files[0];
+    const allowed = ['image/jpeg','image/png','image/jpg'];
+    if(!allowed.includes(file.type)){
+      showErr(avatar,'Only .jpg, .jpeg, .png allowed');
+      valid = false;
+    }else clearErr(avatar);
+  }else clearErr(avatar); 
+
+  if(!valid) e.preventDefault();
+}
+
+$('regForm').addEventListener('submit', validateForm);
+
+document.querySelectorAll('input,select,textarea').forEach(el=>{
+  el.addEventListener('input',()=>clearErr(el));
+});
+</script>
+</body>
+</html>

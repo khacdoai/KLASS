@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Ẩn phần tử</title>
+</head>
+<body>
+
+  <div id="myBox" style="width: 200px; height: 100px; background-color: lightgreen; padding: 10px;">
+    Đây là nội dung sẽ bị ẩn
+  </div>
+
+  <button id="hideBtn">Ẩn nội dung</button>
+
+  <script>
+    document.getElementById("hideBtn").addEventListener("click", function() {
+      document.getElementById("myBox").style.display = "none";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #errorMessage { color: red; margin-top: 6px; }
+    #successMessage { color: green; margin-top: 6px; }
+  </style>
+</head>
+<body>
+
+  <label for="emailInput">Email:</label>
+  <input type="text" id="emailInput" placeholder="name@example.com" />
+  <button id="validateBtn">Validate</button>
+
+  <p id="errorMessage"></p>
+  <p id="successMessage"></p>
+
+  <script>
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,63}$/;
+      return emailRegex.test(email);
+    }
+
+    document.getElementById('validateBtn').addEventListener('click', function () {
+      const emailInput = document.getElementById('emailInput').value.trim();
+      const errorMsgEl = document.getElementById('errorMessage');
+      const successMsgEl = document.getElementById('successMessage');
+
+      errorMsgEl.textContent = '';
+      successMsgEl.textContent = '';
+
+      if (emailInput === '') {
+        errorMsgEl.textContent = 'Vui lòng nhập email.';
+      } else if (!isValidEmail(emailInput)) {
+        errorMsgEl.textContent = 'Địa chỉ email không hợp lệ!';
+      } else {
+        successMsgEl.textContent = 'Email hợp lệ';
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  align-items: center;
+  border-radius: 90px;
+  padding: 16px 20px;
+  gap: 16px;
+  margin: 10px 0;
+  width: fit-content;
+  min-width: 220px;
+}
+
+.avatarGroup {
+  display: flex;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  margin-left: -10px;
+}
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.subtitle {
+  font-size: 13px;
+  opacity: 0.8;
+}

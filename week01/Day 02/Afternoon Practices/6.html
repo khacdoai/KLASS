@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  </style>
+</head>
+<body>
+    <input id="inputname">
+    <button id="alert"> click me </button>
+
+  <script>  
+    let name = document.getElementById("inputname")
+    document.getElementById('alert').addEventListener("click", function(){
+        let text = name.value.trim();
+        alert(text);
+    })
+
+  </script>
+
+</body>
+</html>

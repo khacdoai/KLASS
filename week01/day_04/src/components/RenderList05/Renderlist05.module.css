@@ -1,0 +1,104 @@
+.wrapper {
+  padding: 16px;
+  justify-items: space-between;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 165px;
+  padding: 12px;
+  font-family: sans-serif;
+  position: relative;
+  
+
+}
+
+.image_wrapper {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image_wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.discount_badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: orange;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.shop_name {
+  font-size: 12px;
+  color: gray;
+  margin-top: 8px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 4px 0;
+  height: 38px;
+  overflow: hidden;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.sale_price {
+  color: green;
+  font-weight: bold;
+}
+
+.original_price {
+  color: #aaa;
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+.off {
+  font-size: 12px;
+  color: red;
+}
+
+.rating {
+  font-size: 14px;
+  color: orange;
+}
+
+.sold {
+  font-size: 12px;
+  color: #444;
+  margin-top: 2px;
+}

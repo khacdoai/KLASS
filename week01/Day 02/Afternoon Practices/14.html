@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    input {
+      padding: 8px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      color: #666;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="nameInput">Nhập họ tên:</label><br>
+  <input type="text" id="nameInput"><br><br>
+
+  <button id="submitBtn">Gửi</button>
+
+  <script>
+    const input = document.getElementById('nameInput');
+    const button = document.getElementById('submitBtn');
+
+    input.addEventListener('input', function () {
+      const value = input.value.trim();
+      if (value !== '') {
+        button.disabled = true; 
+        button.textContent = 'Đã gửi';
+      }
+    });
+  </script>
+
+</body>
+</html>
