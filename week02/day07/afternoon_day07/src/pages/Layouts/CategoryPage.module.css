@@ -1,0 +1,195 @@
+/* ---------- Tổng layout ---------- */
+.wrapper {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.navbar {
+  margin: 16px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.content {
+  display: flex;
+  gap: 24px;
+}
+
+/* ---------- Top Navigation ---------- */
+.topMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff6a00;
+  padding: 12px 24px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menuList {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.menuList li {
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.menuList li:hover {
+  text-decoration: underline;
+}
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.downArrow {
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.cart span {
+  background-color: white;
+  color: #ff6a00;
+  border-radius: 12px;
+  padding: 2px 6px;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+/* ---------- Sidebar (Filters) ---------- */
+.sidebar {
+  width: 200px;
+}
+
+.sidebar h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.sidebar label {
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+/* ---------- Product List ---------- */
+.productList {
+  flex: 1;
+}
+
+.productList h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr); /* Mobile mặc định */
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* Tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr); /* Desktop */
+  }
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 600;
+  height: 40px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.price {
+  color: #ff6a00;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.newPrice {
+  margin-right: 8px;
+}
+
+.oldPrice {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: orange;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ---------- Pagination ---------- */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.pagination button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.pagination .active {
+  background-color: orange;
+  color: white;
+  border: none;
+}

@@ -1,0 +1,58 @@
+.container {
+  flex: 1;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr); /* Mobile mặc định */
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* Tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr); /* Desktop */
+  }
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.price {
+  color: #ff6a00;
+  font-weight: bold;
+  font-size: 16px;
+}
