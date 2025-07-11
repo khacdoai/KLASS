@@ -20,7 +20,6 @@ const LoginPage = () => {
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     try {
       const result = await login(data.userName, data.password);
-      console.log(result);
 
       const authenticatedUser = {
         id: result.loggedInUser.id,
@@ -40,60 +39,59 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 to-white">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white p-8 rounded shadow-md w-full max-w-sm"
+        className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md space-y-6"
       >
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+        <h2 className="text-3xl font-extrabold text-center text-indigo-700">Welcome Back 👋</h2>
+        <p className="text-sm text-center text-gray-500">Sign in to your account</p>
 
-        <div className="mb-4">
-          <label
-            htmlFor="username"
-            className="block text-sm font-medium text-gray-700"
-          >
+        <div>
+          <label htmlFor="username" className="block text-sm font-medium text-gray-700">
             Username
           </label>
-          <input
-            {...register("userName", { required: "Username is required" })}
-            type="text"
-            id="username"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-            placeholder="Enter your username"
-          />
+          <div className="mt-1 relative">
+            <span className="absolute left-3 top-2.5 text-gray-400">👤</span>
+            <input
+              {...register("userName", { required: "Username is required" })}
+              type="text"
+              id="username"
+              value={'tungnt@softech.vn'}
+              className="pl-10 pr-3 py-2 border border-gray-300 rounded-md w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 outline-none"
+              placeholder="your_username"
+            />
+          </div>
           {errors.userName && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.userName.message}
-            </p>
+            <p className="text-red-500 text-sm mt-1">{errors.userName.message}</p>
           )}
         </div>
 
-        <div className="mb-4">
-          <label
-            htmlFor="password"
-            className="block text-sm font-medium text-gray-700"
-          >
+        <div>
+          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
             Password
           </label>
-          <input
-            {...register("password", { required: "Password is required" })}
-            type="password"
-            id="password"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-            placeholder="Enter your password"
-          />
+          <div className="mt-1 relative">
+            <span className="absolute left-3 top-2.5 text-gray-400">🔒</span>
+            <input
+              {...register("password", { required: "Password is required" })}
+              type="password"
+              value={'123456789'}
+              id="password"
+              className="pl-10 pr-3 py-2 border border-gray-300 rounded-md w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 outline-none"
+              placeholder="••••••••"
+            />
+          </div>
           {errors.password && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.password.message}
-            </p>
+            <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
           )}
         </div>
 
         <button
           type="submit"
-          className="w-full bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition"
+          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg transition duration-200 shadow-sm"
         >
-          Login
+          Sign In
         </button>
       </form>
     </div>
